@@ -21,15 +21,15 @@ use App\Http\Controllers\SalesController;
 Route::get('/', [HomeController::class, 'home']);
 
 //Product
-Route::prefix('products')->group(function () {
-    Route::get('/food-beverage', [ProductController::class, 'foodBeverage']);
-    Route::get('/beauty-health', [ProductController::class, 'beautyHealth']);
-    Route::get('/home-care', [ProductController::class, 'homeCare']);
-    Route::get('/baby-kid', [ProductController::class, 'babyKid']);
+Route::prefix('product')->group(function () {
+    Route::get('/category/foodBeverage', [ProductController::class, 'foodBeverage']);
+    Route::get('/category/beautyHealth', [ProductController::class, 'beautyHealth']);
+    Route::get('/category/homeCare', [ProductController::class, 'homeCare']);
+    Route::get('/category/babyKid', [ProductController::class, 'babyKid']);
 });
 
 //User
-Route::get('/user/{id}/name/{name}', [UserController::class, 'user']);
+Route::get('/user/{id}/{name}', [UserController::class, 'user']);
 
 //Sales
 Route::get('/sales', [SalesController::class, 'sales']);
